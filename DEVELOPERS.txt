@@ -1,0 +1,20 @@
+Make sure that you add these repository mirrors to your ~/.m2/settings.xml file
+
+<settings>  
+
+  <mirrors>
+    <mirror>
+      <id>UK</id>
+      <name>UK Central</name>
+      <url>http://uk.maven.org/maven2</url>
+      <mirrorOf>central</mirrorOf>
+    </mirror>
+    
+    <mirror>
+      <id>repo.jenkins-ci.org</id>
+      <mirrorOf>m.g.o-public</mirrorOf>
+      <url>http://repo.jenkins-ci.org/public</url>
+    </mirror>    
+  </mirrors>
+  
+</settings>

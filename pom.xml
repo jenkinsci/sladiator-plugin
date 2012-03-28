@@ -59,9 +59,8 @@
   </developers>
 
   <scm>
-    <connection>scm:git:git://github.com/jenkinsci/hello-world-plugin.git</connection>
-    <developerConnection>scm:git:git@github.com:jenkinsci/hello-world-plugin.git</developerConnection>
-    <url>https://github.com/jenkinsci/hello-world-plugin</url>
+    <connection>scm:git:gitosis@git.ebit.lv:realsla-jenkins-plugin.git</connection>
+    <developerConnection>scm:git:gitosis@git.ebit.lv:realsla-jenkins-plugin.git</developerConnection>
   </scm>
 
  <repositories>
@@ -229,7 +228,13 @@
         <groupId>org.json</groupId>
         <artifactId>json</artifactId>
         <version>20090211</version>
-      </dependency>
+    </dependency>
+    
+    <dependency>
+        <groupId>commons-codec</groupId>
+        <artifactId>commons-codec</artifactId>
+        <version>1.4</version>
+    </dependency>      
   </dependencies>
   
 </project>
