@@ -36,7 +36,7 @@
   </parent>
 
   <artifactId>simple-sla</artifactId>
-  <version>1.100</version>
+  <version>1.101</version>
   <packaging>hpi</packaging>
 
   <name>SimpleSLA notification Plugin</name>
