@@ -35,11 +35,11 @@
     <relativePath>../pom.xml</relativePath>
   </parent>
 
-  <artifactId>simple-sla</artifactId>
-  <version>1.101</version>
+  <artifactId>SLAdiator</artifactId>
+  <version>1.102</version>
   <packaging>hpi</packaging>
 
-  <name>SimpleSLA notification Plugin</name>
+  <name>SLAdiator notification Plugin</name>
   <url>http://www.ebit.lv</url>
 
   <licenses>

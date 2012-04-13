@@ -1,4 +1,4 @@
-package hudson.plugins.simple_sla;
+package hudson.plugins.sladiator;
 
 import hudson.Launcher;
 import hudson.Extension;
@@ -18,16 +18,16 @@ import org.apache.commons.httpclient.methods.PostMethod;
 import org.apache.commons.httpclient.methods.StringRequestEntity;
 
 /**
- * SimpleSLANotifier
+ * SLAdiatorNotifier
  * @author Martins Kemme
  */
-public class SimpleSLANotifier extends Notifier {
+public class SLAdiatorNotifier extends Notifier {
 
     private final String token;
     private final String name;
 
     @DataBoundConstructor
-    public SimpleSLANotifier(String name, String token) {
+    public SLAdiatorNotifier(String name, String token) {
         this.name = name;   // Project name
         this.token = token;
     }
@@ -70,14 +70,14 @@ public class SimpleSLANotifier extends Notifier {
         String body = formMessageBody(build).toString();
         
         /* Get server name from global config and 
-        default to simplesla.ebit.lv, if not specified */
+        default to SLAdiator.ebit.lv, if not specified */
         String server = getDescriptor().serverName();
         if (server == null || server.equals("")) {
-            server = "simplesla.ebit.lv";
+            server = "SLAdiator.ebit.lv";
         }
 
         String url = "https://" + server + "/api/tickets";
-        log.printf("SimpleSLA: calling url %s with message %s. Token: %s%n", url, build.getResult().toString(), getToken());                
+        log.printf("SLAdiator: calling url %s with message %s. Token: %s%n", url, build.getResult().toString(), getToken());                
         PostMethod httpMethod = new PostMethod(url);
 
 	try {
@@ -86,17 +86,17 @@ public class SimpleSLANotifier extends Notifier {
             httpMethod.setRequestEntity(new StringRequestEntity(body, "application/json", null));
             statusCode = client.executeMethod(httpMethod);
         } catch (HttpException e) {
-                log.printf("SimpleSLA: HttpException: %s%n", e.getMessage());
+                log.printf("SLAdiator: HttpException: %s%n", e.getMessage());
                 log.printf(e.getStackTrace().toString());
         } catch (IOException e) {
-                log.printf("SimpleSLA: IOException: %s%n", e.getMessage());
+                log.printf("SLAdiator: IOException: %s%n", e.getMessage());
         } catch (Exception e) {
-                log.printf("SimpleSLA: Exception: %s%n", e.getMessage());
+                log.printf("SLAdiator: Exception: %s%n", e.getMessage());
         } finally {
             httpMethod.releaseConnection();
         }        
         if (statusCode != 200) {
-                log.printf("SimpleSLA: server response error code was %s%n", statusCode);
+                log.printf("SLAdiator: server response error code was %s%n", statusCode);
         }
     }
     
@@ -115,7 +115,7 @@ public class SimpleSLANotifier extends Notifier {
             json.put("issue_created_at",build.getTime().toString());
             json.put("issue_updated_at",build.getTime().toString());
             json.put("resolution",(String)null);
-            json.put("source","jenkins-plugin v1.101");
+            json.put("source","jenkins-plugin v1.102");
         } catch (net.sf.json.JSONException e) {
         }
         return json;
@@ -138,7 +138,7 @@ public class SimpleSLANotifier extends Notifier {
 
         @Override
         public String getDisplayName() {
-            return "Send notifications to SimpleSLA monitoring server";
+            return "Send notifications to SLAdiator monitoring server";
         }
         
         @Override
