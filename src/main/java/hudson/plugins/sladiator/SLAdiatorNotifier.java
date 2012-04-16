@@ -77,7 +77,7 @@ public class SLAdiatorNotifier extends Notifier {
         }
 
         String url = "https://" + server + "/api/tickets";
-        log.printf("SLAdiator: calling url %s with message %s. Token: %s%n", url, build.getResult().toString(), getToken());                
+        log.printf("SLAdiator: calling SLAdiator server %s with message %s.%n", url, build.getResult().toString());                
         PostMethod httpMethod = new PostMethod(url);
 
 	try {
@@ -115,7 +115,7 @@ public class SLAdiatorNotifier extends Notifier {
             json.put("issue_created_at",build.getTime().toString());
             json.put("issue_updated_at",build.getTime().toString());
             json.put("resolution",(String)null);
-            json.put("source","jenkins-plugin v1.102");
+            json.put("source","jenkins-plugin v1.103");
         } catch (net.sf.json.JSONException e) {
         }
         return json;
