@@ -1,3 +1,3 @@
-This plugin sends Jenkins job statuses to SimpleSLA monitoring tool.
+This plugin sends Jenkins job statuses to SLAdiator monitoring tool.
 
-https://simplesla.ebit.lv
+https://sladiator.com
