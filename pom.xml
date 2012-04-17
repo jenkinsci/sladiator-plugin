@@ -1,0 +1,73 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.jenkins-ci.plugins</groupId>
+    <artifactId>plugin</artifactId>
+    <version>1.424</version><!-- which version of Jenkins is this plugin built against? -->
+  </parent>
+
+  <artifactId>sladiator-notifier</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>hpi</packaging>
+
+  <name>SLAdiator notifier plugin</name>
+  <description>Sends notifications from Jenkins to SLAdiator.com application</description>
+  <url>http://sladiator.com</url>
+  
+  <!-- get every artifact through repo.jenkins-ci.org, which proxies all the artifacts that we need -->
+  <repositories>
+    <repository>
+      <id>repo.jenkins-ci.org</id>
+      <url>http://repo.jenkins-ci.org/public/</url>
+    </repository>
+  </repositories>
+
+  <licenses>
+    <license>
+      <name>The MIT license</name>
+      <url>http://en.wikipedia.org/wiki/MIT_License</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+
+  <developers>
+    <developer>
+      <id>mkemme</id>
+      <name>Martins Kemme</name>
+      <email>martins.kemme@gmail.com</email>
+    </developer>
+  </developers>
+  
+  <scm>
+    <connection>scm:git:gitosis@git.ebit.lv:realsla-jenkins-plugin.git</connection>
+    <developerConnection>scm:git:gitosis@git.ebit.lv:realsla-jenkins-plugin.git</developerConnection>
+  </scm>
+
+  <pluginRepositories>
+    <pluginRepository>
+      <id>repo.jenkins-ci.org</id>
+      <url>http://repo.jenkins-ci.org/public/</url>
+    </pluginRepository>
+  </pluginRepositories>
+  
+  <dependencies>
+    <dependency>
+      <groupId>commons-httpclient</groupId>
+      <artifactId>commons-httpclient</artifactId>
+      <version>3.1</version>
+    </dependency>
+    
+    <dependency>
+        <groupId>org.json</groupId>
+        <artifactId>json</artifactId>
+        <version>20090211</version>
+    </dependency>
+    
+    <dependency>
+        <groupId>commons-codec</groupId>
+        <artifactId>commons-codec</artifactId>
+        <version>1.4</version>
+    </dependency>
+  </dependencies>
+  
+</project>

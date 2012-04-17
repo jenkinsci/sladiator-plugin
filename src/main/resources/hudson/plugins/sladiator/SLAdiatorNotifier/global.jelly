@@ -1,0 +1,13 @@
+<j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:d="jelly:define" xmlns:l="/lib/layout" xmlns:t="/lib/hudson" xmlns:f="/lib/form">
+  <f:section title="SLAdiator configuration">
+    <f:entry title="SLAdiator server name" 
+        description="Provide SLAdiator server name, e.g. sladiator.ebit.lv"
+        help="${rootURL}/plugin/sladiator/help-globalConfig.html">
+        <f:textbox 
+            name="simple_sla.serverName" 
+            default="sladiator.ebit.lv"
+            value="${descriptor.serverName()}"/>
+    </f:entry>
+    
+  </f:section>
+</j:jelly>
