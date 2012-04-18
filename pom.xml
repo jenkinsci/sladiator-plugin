@@ -3,7 +3,7 @@
   <parent>
     <groupId>org.jenkins-ci.plugins</groupId>
     <artifactId>plugin</artifactId>
-    <version>1.424</version><!-- which version of Jenkins is this plugin built against? -->
+    <version>1.424</version>
   </parent>
 
   <artifactId>sladiator-notifier</artifactId>
@@ -12,7 +12,7 @@
 
   <name>SLAdiator notifier plugin</name>
   <description>Sends notifications from Jenkins to SLAdiator.com application</description>
-  <url>http://sladiator.com</url>
+  <url>https://wiki.jenkins-ci.org/display/JENKINS/SLAdiator+plugin</url>
   
   <!-- get every artifact through repo.jenkins-ci.org, which proxies all the artifacts that we need -->
   <repositories>
@@ -39,8 +39,9 @@
   </developers>
   
   <scm>
-    <connection>scm:git:gitosis@git.ebit.lv:realsla-jenkins-plugin.git</connection>
-    <developerConnection>scm:git:gitosis@git.ebit.lv:realsla-jenkins-plugin.git</developerConnection>
+    <connection>scm:git:ssh://github.com/jenkinsci/sladiator-plugin.git</connection>
+    <developerConnection>scm:git:ssh://git@github.com/jenkinsci/sladiator-plugin.git</developerConnection>
+    <url>https://github.com/jenkinsci/sladiator-plugin</url>
   </scm>
 
   <pluginRepositories>
