@@ -1,4 +1,4 @@
-package hudson.plugins.sladiator;
+package jenkins.plugins.sladiator;
 
 import hudson.Launcher;
 import hudson.Extension;
