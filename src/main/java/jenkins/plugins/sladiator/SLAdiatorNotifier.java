@@ -115,7 +115,7 @@ public class SLAdiatorNotifier extends Notifier {
             json.put("issue_created_at",build.getTime().toString());
             json.put("issue_updated_at",build.getTime().toString());
             json.put("resolution",(String)null);
-            json.put("source","jenkins-plugin v1.103");
+            json.put("source","jenkins-plugin v1.0.x");
         } catch (net.sf.json.JSONException e) {
         }
         return json;
