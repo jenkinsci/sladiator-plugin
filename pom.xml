@@ -7,7 +7,7 @@
   </parent>
 
   <artifactId>sladiator-notifier</artifactId>
-  <version>1.0.2</version>
+  <version>1.0.3-SNAPSHOT</version>
   <packaging>hpi</packaging>
 
   <name>SLAdiator notifier plugin</name>
