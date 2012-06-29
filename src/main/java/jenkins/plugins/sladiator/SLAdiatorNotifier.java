@@ -1,4 +1,4 @@
-package hudson.plugins.sladiator;
+package jenkins.plugins.sladiator;
 
 import hudson.Launcher;
 import hudson.Extension;
@@ -73,7 +73,7 @@ public class SLAdiatorNotifier extends Notifier {
         default to SLAdiator.ebit.lv, if not specified */
         String server = getDescriptor().serverName();
         if (server == null || server.equals("")) {
-            server = "SLAdiator.ebit.lv";
+            server = "SLAdiator.com";
         }
 
         String url = "https://" + server + "/api/tickets";
@@ -115,7 +115,7 @@ public class SLAdiatorNotifier extends Notifier {
             json.put("issue_created_at",build.getTime().toString());
             json.put("issue_updated_at",build.getTime().toString());
             json.put("resolution",(String)null);
-            json.put("source","jenkins-plugin v1.103");
+            json.put("source","jenkins-plugin v1.1-SNAPSHOT");
         } catch (net.sf.json.JSONException e) {
         }
         return json;
